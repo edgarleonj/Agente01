@@ -22,6 +22,10 @@ messages = [
 
 resp = client.chat.completions.create(model="qwen/qwen3-32b", messages=messages)
 
-msg = resp.choices[0].message.content
-assistant_text = msg.content or ""
-print(f"Asistente: {assistant_text}")
+#msg = resp.choices[0].message.content
+#assistant_text = msg.content or ""
+#print(f"Asistente: {assistant_text}")
+
+# La forma correcta para la versión actual de la librería:
+assistant_text = resp.choices[0].message.content
+print(assistant_text)
